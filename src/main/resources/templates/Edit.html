@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit</title>
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css"
+      th:href="@{css/bootstrap.min.css}">
+      <style type="text/css">
+      label{
+      padding-left:50%;
+      margin-bottom:2%
+     
+      }
+      h1{
+      text-align:center;
+      }
+      
+      button{
+      margin-left:45%;
+      }
+      
+      </style>
+</head>
+<body>
+   <h1 class="display-3">Modifier User</h1>
+  <form th:action="@{enrg}" class="mt-5" method="post">
+  
+  <div class="form-outline">
+  
+       <label  class="form-label" for="formControlLg" >Nom</label>
+        <input  id="formControlLg" type="text" name="nom" class="form-control" th:value="${User.nom}">
+</div>
+
+       <label class="text-muted">Prenom</label>
+        <input type="text" name="prenom" class="form-control" th:value="${User.prenom}">
+
+       <label class="text">Email</label>
+        <input type="text" name="email" class="form-control" th:value="${User.email}">
+       <label class="text-muted">VILLE</label>
+        <input type="text" name="ville" class="form-control" th:value="${User.ville}">
+    <input type="hidden" name="idC" class="form-control" th:value="${User.idC}">
+    <p></p>
+    
+     <button  class="btn btn-danger" type="submit">Enregistrer</button>
+  </form>
+  
+</body>
+</html>
